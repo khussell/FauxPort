@@ -33,7 +33,7 @@
     <div>
     
     <?php
-    $query = $con->query("SELECT * FROM deals ORDER BY id DESC");
+    $query = $con->query("SELECT * FROM deals WHERE buyerId IS NULL ORDER BY id DESC");
      if ($query->rowCount() > 0) {
         foreach ($query as $row) {
             //print $row['shipName'] . "\t";
@@ -45,14 +45,9 @@
             $description = $row['description'];
             $price = $row['price'];
             $image = $row['image'];
+            $id = $row['id'];
 
-            echo "<div class='card'><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p><form><input type='text' placeholder='Your Name'><button type='submit'>Buy!</button></form></div>";
-            
-            //</form></div>";
-            
-            //<h3>$row['shipName']</h3><p>$row['description']</p><p>$$row['price']</p><form><input type="text" placeholder="name"><button type="submit">Buy!</button></form></div>";
-
-
+            echo "<div class='card'><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p><form action='purchased.php' method='POST'><input type='text' name='name'  placeholder='Your Name'><input style='display:none;' value='$id' name='id'><button type='submit'>Buy!</button></form></div>";
         }
     } else {
         echo "0 results";

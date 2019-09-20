@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +25,29 @@
 
   <div>
     <h1>Purchased Deals</h1>
+
+    <?php
+      include('config.php');
+      if(isset($_POST["name"])) {
+        $name = $_POST["name"];
+        $id = $_POST["id"];
+        echo "<p>$id</p>";
+        
+        function insert($name){
+          global $con;
+          $query = $con->prepare("INSERT INTO buyers(name) VALUES(:name)");
+
+          $query->bindParam(":name", $name);
+          $query->execute();
+        }
+
+        insert($name);
+      } 
+
+
+    ?>
+
+
   <div>
 
 
