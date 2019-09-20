@@ -22,7 +22,8 @@
 
   <div>
     <?php
-  
+    include("config.php");
+    global $con;
     if(isset($_POST["shipName"]) && isset($_POST["description"]) && isset($_POST["price"]) && isset($_POST["pickPhoto"])) {
       $shipName = $_POST["shipName"];
       $description = $_POST["description"];
@@ -32,6 +33,20 @@
       //echo $description;
       //echo $price;
       //echo $pickPhoto;
+      function create($shipName, $description, $price, $pickPhoto){
+      global $con;
+      $query = $con->prepare("INSERT INTO deals(shipName, description, price, image)
+                              VALUES (:shipName, :description, :price, :image)");
+      $query->bindParam(":shipName", $shipName);
+      $query->bindParam(":description", $description);
+      $query->bindParam(":price", $price);
+      $query->bindParam(":image", $pickPhoto);
+
+      return $query->execute();
+      }
+
+      create($shipName, $description, $price, $pickPhoto);
+
       echo "<h1>Your Ship Deal has been Created!</h1>";
       echo "<a href='./index.php'>Check it out</a>";
     }else{
