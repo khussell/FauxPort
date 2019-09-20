@@ -31,14 +31,39 @@
 
 
     <div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaGT97O0oaUjcDT5RFIud9A6ktHQ73ZDHtgi_h67Z1HuF4UZGu" />
-      <h3>The Fun Ship</h3>
-      <p>This ship comes complete with anything you need or want!</p>
-      <p>$300</p>
-      <form>
-        <input type="text" placeholder="name">
-        <button type="submit">Buy!</button>
-      </form>
+    
+    <?php
+    $query = $con->query("SELECT * FROM deals ORDER BY id DESC");
+     if ($query->rowCount() > 0) {
+        foreach ($query as $row) {
+            //print $row['shipName'] . "\t";
+            //print $row['description'] . "\t";
+            //print $row['price'] . "\n";
+            //print $row['image'] . "\n";
+            $shipName = $row['shipName'];
+            $image = $row['image'];
+            $description = $row['description'];
+            $price = $row['price'];
+            $image = $row['image'];
+
+            echo "<div class='card'><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p><form><input type='text' placeholder='Your Name'><button type='submit'>Buy!</button></form></div>";
+            
+            //</form></div>";
+            
+            //<h3>$row['shipName']</h3><p>$row['description']</p><p>$$row['price']</p><form><input type="text" placeholder="name"><button type="submit">Buy!</button></form></div>";
+
+
+        }
+    } else {
+        echo "0 results";
+    }
+    
+
+
+    ?>
+
+
+
     </div>
   <div>
 </div>
