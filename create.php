@@ -22,12 +22,12 @@
 
 <div class="createForm">
   <h1>Create a Ship Deal</h1>
-  <form>
-    <input type="text" placeholder="Ship Name">
+  <form action="./success.php" method="POST">
+    <input type="text" placeholder="Ship Name" name="shipName">
     <br>
-    <input type="text" placeholder="Description">
+    <input type="text" placeholder="Description" name="description">
     <br>
-    <input type="number" placeholder="0">
+    <input type="number" placeholder="0" name="price">
     <br>
 
 

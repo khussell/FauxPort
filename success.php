@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +21,27 @@
 
 
   <div>
-    <h1>Your Ship Deal has been Created!</h1>
-    <a href="./index.php">Check it out</a>
+    <?php
+  
+    if(isset($_POST["shipName"]) && isset($_POST["description"]) && isset($_POST["price"]) && isset($_POST["pickPhoto"])) {
+      $shipName = $_POST["shipName"];
+      $description = $_POST["description"];
+      $price = $_POST["price"];
+      $pickPhoto = $_POST["pickPhoto"];
+      //echo $shipName;
+      //echo $description;
+      //echo $price;
+      //echo $pickPhoto;
+      echo "<h1>Your Ship Deal has been Created!</h1>";
+      echo "<a href='./index.php'>Check it out</a>";
+    }else{
+      echo "<h1>You didn't fill in all required fields!</h1>";
+      echo "<a href='./create.php'>Try again</a>";
+    }
+
+
+  ?>
+    
   <div>
 
 
