@@ -33,15 +33,37 @@
         $id = $_POST["id"];
         echo "<p>$id</p>";
         
-        function insert($name){
+        function insert($name, $id){
           global $con;
           $query = $con->prepare("INSERT INTO buyers(name) VALUES(:name)");
 
           $query->bindParam(":name", $name);
           $query->execute();
+          
+          
+
+        
+          $query2 = $con->prepare("SELECT * FROM buyers WHERE name = :name");
+          $query2->bindParam(":name", $name);
+          $query2->execute();
+          //$query2->execute(['name'=> $name]);
+          if ($query2->rowCount() > 0) {
+            foreach ($query2 as $row) {
+                $idBuyer= $row['id'];
+                echo "<p>$idBuyer</p>";
+            }
+          }else{
+              echo "<p>None</p>";
+          }
+
+          $query3 = $con->prepare("UPDATE deals SET buyerId = :idBuyer WHERE id = :id ");
+          $query3->bindParam(":idBuyer", $idBuyer);
+          $query3->bindParam(":id", $id);
+          $query3->execute();
+        
         }
 
-        insert($name);
+        insert($name, $id);
       } 
 
 
