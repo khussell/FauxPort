@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FauxPort</title>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
     <link rel="icon" href="assets/images/icon.png" type="image/gif" sizes="16x16">
 </head>
 <body>
 
 <div class="wrapper">
   <div class="nav">
-    <h1>FauxPort</h1>
-    <a href="./index.php">Buy Deals</a>
-    <a href="./create.php">Create Deals</a>
-    <a href="./purchased.php">Purchased Deals</a>
+    <h1 class="logo">FauxPort</h1>
+    <div class="links">
+      <a href="./index.php">Buy Deals</a>
+      <a href="./create.php">Create Deals</a>
+      <a href="./purchased.php">Purchased Deals</a>
+    </div>
+    
   </div>
 
 
-  <div>
-    <h1>Purchased Deals</h1>
+
+
+  <div class="todaysDeals">
+    <img class="transShip" src="./assets/images/transShip.png">
+    <img class="water" width="100%" height="500px" src="./assets/images/water1.png">
+
+    <div class="dealsContent">
+    <h1 class="todaysDealsTitle">Purchased Deals</h1>
+    <div class="cards">
 
     <?php
       include('config.php');
@@ -112,7 +118,7 @@
 
     ?>
 
-
+  <div>
   <div>
 
 

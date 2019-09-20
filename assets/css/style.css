@@ -164,3 +164,38 @@ input{
     height: 25px;
     padding-left: 5px;
 }
+
+
+
+.createInput{
+    width: 40%;
+    margin: 10px 30%;
+    height: 35px;
+}
+
+
+
+.allRadios{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+
+}
+
+.radio{
+   padding: 10px;
+  
+}
+
+.buttonDiv{
+    text-align: center;
+}
+
+.pick{
+    margin: 10px auto;
+    color: #0095be;
+    text-align: center;
+}
+
+
+

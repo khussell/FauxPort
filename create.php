@@ -12,42 +12,54 @@
 
 <div class="wrapper">
   <div class="nav">
-    <h1>FauxPort</h1>
-    <a href="./index.php">Buy Deals</a>
-    <a href="./create.php">Create Deals</a>
-    <a href="./purchased.php">Purchased Deals</a>
+    <h1 class="logo">FauxPort</h1>
+    <div class="links">
+      <a href="./index.php">Buy Deals</a>
+      <a href="./create.php">Create Deals</a>
+      <a href="./purchased.php">Purchased Deals</a>
+    </div>
+    
   </div>
-  <div><div>
-</div>
+
+
+
+
+  <div class="todaysDeals">
+    <img class="transShip" src="./assets/images/transShip.png">
+    <img class="water" width="100%" height="500px" src="./assets/images/water1.png">
+
+    <div class="dealsContent">
+    <h1 class="todaysDealsTitle">Create a Ship Deal</h1>
 
 <div class="createForm">
-  <h1>Create a Ship Deal</h1>
   <form action="./success.php" method="POST">
-    <input type="text" placeholder="Ship Name" name="shipName">
+    <input class="createInput" type="text" placeholder="Ship Name" name="shipName">
     <br>
-    <input type="text" placeholder="Description" name="description">
+    <input class="createInput" type="text" placeholder="Description" name="description">
     <br>
-    <input type="number" placeholder="0" name="price">
+    <input class="createInput" type="number" placeholder="Price" name="price">
     <br>
-
-
+    <p class="pick">Pick a Photo:</p>
+    <div class="allRadios flex-container">
     <?php
       $shipImagesArray = array('ship1.jpg','ship2.jpg','ship3.jpg','ship4.jpg','ship5.jpg','ship6.jpg','ship7.jpg','ship8.jpg');
       foreach($shipImagesArray as $shipImage){
           $shipImage = "./assets/images/" . $shipImage;
-          echo "<input name='pickPhoto' value='$shipImage' type='radio'>";
-          echo "<img class='pickShipPhoto' src='$shipImage'/>";
+          echo "<div class='radio'><input name='pickPhoto' class='radioButton' value='$shipImage' type='radio'><img class='pickShipPhoto' src='$shipImage'/></div>";
       }
 
 
     ?>
+    </div>
+    
 
-
-
-    <button type="submit">Create!</button>
+  <br>
+  <div class="buttonDiv">
+    <button type="submit" class="buy">Create!</button>
+    </div>
   </form>
 </div>
-
+    </div>
 
     
 </body>
