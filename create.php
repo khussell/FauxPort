@@ -40,6 +40,7 @@
     <input class="createInput" type="number" placeholder="Price" name="price">
     <br>
     <p class="pick">Pick a Photo:</p>
+    
     <div class="allRadios flex-container">
     <?php
       $shipImagesArray = array('ship1.jpg','ship2.jpg','ship3.jpg','ship4.jpg','ship5.jpg','ship6.jpg','ship7.jpg','ship8.jpg');

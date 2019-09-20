@@ -179,11 +179,15 @@ input{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
+   height: auto;
+   align-content: center;
 
 }
 
 .radio{
    padding: 10px;
+   display: flex;
+   align-items: center;
   
 }
 
