@@ -31,7 +31,7 @@
       if(isset($_POST["name"])) {
         $name = $_POST["name"];
         $id = $_POST["id"];
-        echo "<p>$id</p>";
+        //echo "<p>$id</p>";
         
         function insert($name, $id){
           global $con;
@@ -50,7 +50,7 @@
           if ($query2->rowCount() > 0) {
             foreach ($query2 as $row) {
                 $idBuyer= $row['id'];
-                echo "<p>$idBuyer</p>";
+                //echo "<p>$idBuyer</p>";
             }
           }else{
               echo "<p>None</p>";
@@ -60,11 +60,54 @@
           $query3->bindParam(":idBuyer", $idBuyer);
           $query3->bindParam(":id", $id);
           $query3->execute();
-        
+
+          $query4 = $con->query("SELECT * FROM deals LEFT JOIN buyers ON buyers.id = deals.buyerId WHERE buyerId IS NOT NULL ORDER BY buyerid DESC");
+          if ($query4->rowCount() > 0) {
+             foreach ($query4 as $row) {
+                 //print $row['shipName'] . "\t";
+                 //print $row['description'] . "\t";
+                 //print $row['price'] . "\n";
+                 //print $row['image'] . "\n";
+                 $shipName = $row['shipName'];
+                 $image = $row['image'];
+                 $description = $row['description'];
+                 $price = $row['price'];
+                 $image = $row['image'];
+                 $id = $row['id'];
+                 $buyerId = $row['buyerId'];
+                 $buyerName = $row['name'];
+     
+                 echo "<div class='card'><h3>Purchased by $buyerName<h3><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p></div>";
+             }
+          }
         }
 
         insert($name, $id);
-      } 
+      }else{
+
+        $query4 = $con->query("SELECT * FROM deals LEFT JOIN buyers ON buyers.id = deals.buyerId WHERE buyerId IS NOT NULL ORDER BY buyerid DESC");
+        if ($query4->rowCount() > 0) {
+           foreach ($query4 as $row) {
+               //print $row['shipName'] . "\t";
+               //print $row['description'] . "\t";
+               //print $row['price'] . "\n";
+               //print $row['image'] . "\n";
+               $shipName = $row['shipName'];
+               $image = $row['image'];
+               $description = $row['description'];
+               $price = $row['price'];
+               $image = $row['image'];
+               $id = $row['id'];
+               $buyerId = $row['buyerId'];
+               $buyerName = $row['name'];
+   
+               echo "<div class='card'><h3>Purchased by $buyerName<h3><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p></div>";
+           }
+        }
+
+
+
+      }
 
 
     ?>
