@@ -1,11 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Candara;
+}
+body{
+    width: 100%;
+    background-color: #0095be;
+}
+
 .pickShipPhoto{
     height: 100px;
 }
 
+
+
+.nav{
+    background-color: rgba(214, 241, 250, 0.61);
+    position: fixed;
+    z-index: 2;
+    height: 70px;
+    width: 100%;
+}
+
+.water{
+    margin-top: -100px;
+    background-color: rgba(214, 241, 250);
+}
+
+
+
+.transShip{
+    position: absolute;
+    top: -10px;
+    z-index: 3;
+    left: 50px;
+    animation-name: ship;
+    animation-duration: 120s;
+}
+
+@keyframes ship{
+    from {left: 50px;}
+    to {left: 100%;}
+}
+
+.logo{
+    color: #0095be;
+    font-family: Candara;
+    text-shadow: 2px 1px white;
+    margin-top: 3px;
+    margin-left: 20px;
+    font-size: 50px;
+}
+
+.links{
+    float: right;
+    margin-top: -40px;
+    
+}
+
+.links>a{
+    color: #0095be;
+    font-family: Candara;
+    text-decoration: none;
+    margin-left: 0px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: white;
+    border: #0095be solid 1px;
+    
+    
+}
+
+.links>a:hover{
+    background-color: #0095be;
+    color: white;
+    border: white solid 1px;
+}
+
+
+
+.todaysDeals{
+    float: clear;
+    background-color: #0095be;
+  
+}
+
+.dealsContent{
+    border: white solid 2px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -160px;
+    background-color: rgba(245, 251, 253, 0.877);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+
+.todaysDealsTitle{
+   margin-bottom: 40px;
+    color:#0095be;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px white;
+}
+
+.cards{
+    animation-name: cardsEnter;
+    animation-duration: 1s;
+    transition-timing-function: ease-in-out;
+    
+}
+
+@keyframes cardsEnter{
+    from{margin-top: 800px;}
+    to{margin-top: 0px;}
+}
+
+
 .card{
     padding: 30px;
     margin: 20px;
-    border: black solid 2px;
+    border: #0095be solid 1px;
     text-align: center;
     width: 200px;
+    background-color: white;
+    box-shadow: 10px 10px 5px dimgray;
+    float: center;
+    margin: 20px auto;
+    margin-bottom: 40px;
+    
+}
+
+.card>p,
+.card>h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.buy{
+    color: white;
+    background-color: #09d1a6;
+    width: 80px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 2px 2px gray;
+}
+
+.buy:hover{
+    background-color: #60f8d7;
+    
+}
+
+input{
+    border-radius: 5px;
+    height: 25px;
+    padding-left: 5px;
 }
