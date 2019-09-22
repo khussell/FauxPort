@@ -11,9 +11,6 @@ catch(PDOExeption $e){
 }
 */
 
-
-
-
 ?>
 
 <?php

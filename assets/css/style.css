@@ -3,7 +3,9 @@
     padding: 0;
     font-family: Candara;
 }
+
 html{overflow-x: hidden;}
+
 body{
     width: 100%;
     background-color: #0095be;
@@ -14,8 +16,6 @@ body{
 .pickShipPhoto{
     height: 100px;
 }
-
-
 
 .nav{
     background-color: rgba(214, 241, 250, 0.61);
@@ -29,7 +29,6 @@ body{
     margin-top: -100px;
     background-color: rgba(214, 241, 250);
 }
-
 
 
 .transShip{
