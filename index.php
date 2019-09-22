@@ -53,7 +53,7 @@
             $image = $row['image'];
             $id = $row['id'];
 
-            echo "<div class='card'><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p><form action='purchased.php' method='POST'><input type='text' name='name'  placeholder='Your Name'><input style='display:none;' value='$id' name='id'><button class='buy' type='submit'>Buy!</button></form></div>";
+            echo "<div class='card'><img class='shipPhoto' height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p><form action='purchased.php' method='POST'><input type='text' name='name' class='nameEntry' placeholder='Your Name'><input style='display:none;' value='$id' name='id'><button class='buy' type='submit'>Buy!</button></form></div>";
         }
     } else {
         echo "0 results";

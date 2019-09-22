@@ -3,9 +3,12 @@
     padding: 0;
     font-family: Candara;
 }
+html{overflow-x: hidden;}
 body{
     width: 100%;
     background-color: #0095be;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .pickShipPhoto{
@@ -55,6 +58,10 @@ body{
 .links{
     float: right;
     margin-top: -40px;
+    position: fixed;
+    right: 10px;
+    z-index: 5;
+   
     
 }
 
@@ -82,6 +89,7 @@ body{
 .todaysDeals{
     float: clear;
     background-color: #0095be;
+   
   
 }
 
@@ -199,6 +207,91 @@ input{
     margin: 10px auto;
     color: #0095be;
     text-align: center;
+}
+
+.success{
+    border: white solid 2px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -160px;
+    background-color: rgba(245, 251, 253, 0.877);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    padding: 30px;
+    text-align: center;
+}
+
+.successTitle{
+ color:  #0095be;
+ margin-bottom: 30px;
+}
+
+.successBtn{
+   padding: 10px;
+   text-decoration: none;
+   margin-bottom: 40px;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .transShip{
+        top: 60px;
+        height: 180px;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .transShip{
+      display: none;
+  }
+  .links{
+      float: left;
+      margin-top: 10px;
+      margin-left: 5%;
+      width: 90%;
+  }
+  .nav{
+      height: 120px;
+  }
+  .links>a{
+      margin-right: 2px;
+      font-size: 12px;
+  }
+   .createInput{
+       width: 90%;
+       margin-left: 5%;
+   }
+   .todaysDealsTitle{
+       font-size: 20px;
+       margin-bottom: 10px;
+   }
+   .dealsContent{
+       margin-top: -250px;
+     
+   }
+   .card{
+       width: 90%;
+      margin-left: 3%;
+       padding: 20px;
+   }
+  
+   .cards{
+       width: 90%;
+      
+   }
+   .shipPhoto{
+       height: 60px;
+   }
+   .nameEntry{
+       width: 80%;
+   }
+   .pickShipPhoto{
+       height: 60px;
+   }
+
 }
 
 

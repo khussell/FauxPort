@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FauxPort</title>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
     <link rel="icon" href="assets/images/icon.png" type="image/gif" sizes="16x16">
 </head>
 <body>
 
 <div class="wrapper">
   <div class="nav">
-    <h1>FauxPort</h1>
-    <a href="./index.php">Buy Deals</a>
-    <a href="./create.php">Create Deals</a>
-    <a href="./purchased.php">Purchased Deals</a>
+    <h1 class="logo">FauxPort</h1>
+    <div class="links">
+      <a href="./index.php">Buy Deals</a>
+      <a href="./create.php">Create Deals</a>
+      <a href="./purchased.php">Purchased Deals</a>
+    </div>
+    
   </div>
 
 
-  <div>
+
+
+  <div class="todaysDeals">
+    <img class="transShip" src="./assets/images/transShip.png">
+    <img class="water" width="100%" height="500px" src="./assets/images/water1.png">
+</div>
+
+
+  <div class="success">
     <?php
     include("config.php");
     global $con;
@@ -47,11 +57,11 @@
 
       create($shipName, $description, $price, $pickPhoto);
 
-      echo "<h1>Your Ship Deal has been Created!</h1>";
-      echo "<a href='./index.php'>Check it out</a>";
+      echo "<h1 class='successTitle'>Your Ship Deal has been Created!</h1>";
+      echo "<a class='buy successBtn' href='./index.php'>Check it out</a>";
     }else{
-      echo "<h1>You didn't fill in all required fields!</h1>";
-      echo "<a href='./create.php'>Try again</a>";
+      echo "<h1 class='successTitle'>You didn't fill in all required fields!</h1>";
+      echo "<a class='buy successBtn' href='./create.php'>Try again</a>";
     }
 
 

@@ -83,7 +83,7 @@
                  $buyerId = $row['buyerId'];
                  $buyerName = $row['name'];
      
-                 echo "<div class='card'><h3>Purchased by $buyerName<h3><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p></div>";
+                 echo "<div class='card'><h3>Purchased by $buyerName<h3><img class='shipPhoto' height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p></div>";
              }
           }
         }
@@ -107,7 +107,7 @@
                $buyerId = $row['buyerId'];
                $buyerName = $row['name'];
    
-               echo "<div class='card'><h3>Purchased by $buyerName<h3><img height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p></div>";
+               echo "<div class='card'><h3>Purchased by $buyerName<h3><img class='shipPhoto' height='100px' src='$image'/><h3>$shipName</h3><p>$description</p><p>$$price</p></div>";
            }
         }
 
